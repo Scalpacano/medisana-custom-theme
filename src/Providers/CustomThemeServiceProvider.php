@@ -1,5 +1,4 @@
 <?php
-
 namespace CustomTheme\Providers;
 
 use Plenty\Plugin\ServiceProvider;
