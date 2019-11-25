@@ -1,5 +1,5 @@
 {
-    "version"           :   "1.0.7",
+    "version"           :   "1.0",
     "name"              :   "CustomTheme",
     "pluginIcon"        :   "icon_plugin_xs.png",
     "authorIcon"        :   "icon_author_xs.png",
@@ -7,7 +7,7 @@
     "phone"             :   "",
     "description"       :   "CustomTheme",
     "namespace"         :   "CustomTheme",
-    "author"            :   "plentysystems AG",
+    "author"            :   "Plentybay",
     "type"              :   "theme",
     "require"           :   {
                                 "Ceres":">= 3.0.0"
