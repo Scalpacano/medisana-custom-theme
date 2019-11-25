@@ -1,0 +1,8 @@
+{
+    "marketplaceName"   : {"de":"CustomTheme","en":"CustomTheme"},
+    "license"           : "AGPL-3.0",
+    "price"             : 0.00,
+    "shortDescription"  : { "de": "CustomTheme", "en": "CustomTheme" },
+    "categories"        : ["3518"],
+    "keywords"          : ["plentymarkets", "plugins", "layout", "theme", "ceres"]
+}

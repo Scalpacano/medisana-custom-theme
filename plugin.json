@@ -1,0 +1,39 @@
+{
+    "version"           :   "1.0.7",
+    "name"              :   "CustomTheme",
+    "pluginIcon"        :   "icon_plugin_xs.png",
+    "authorIcon"        :   "icon_author_xs.png",
+    "email"             :   "",
+    "phone"             :   "",
+    "description"       :   "CustomTheme",
+    "namespace"         :   "CustomTheme",
+    "author"            :   "plentysystems AG",
+    "type"              :   "theme",
+    "require"           :   {
+                                "Ceres":">= 3.0.0"
+                            },
+    "serviceProvider"   :   "CustomTheme\\Providers\\CustomThemeServiceProvider",
+    "dataProviders"     :
+    [
+        {
+            "key"           :"CustomTheme\\Containers\\CustomThemeContainer",
+            "name"          :"Stylesheet",
+            "description"   :"Add changes to the CSS file"
+        },
+        {
+            "key"           :"CustomTheme\\Containers\\CustomThemeItemListContainer1",
+            "name"          :"First item list",
+            "description"   :"Display a configurable list of items in your online store"
+        },
+        {
+            "key"           :"CustomTheme\\Containers\\CustomThemeItemListContainer2",
+            "name"          :"Second item list",
+            "description"   :"Display a configurable list of items in your online store"
+        },
+        {
+            "key"           :"CustomTheme\\Containers\\CustomThemeItemListContainer3",
+            "name"          :"Third item list",
+            "description"   :"Display a configurable list of items in your online store"
+        }
+    ]
+}
