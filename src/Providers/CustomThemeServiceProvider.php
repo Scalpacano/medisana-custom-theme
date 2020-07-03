@@ -9,6 +9,10 @@ use IO\Extensions\Functions\Partial;
 use IO\Services\ItemSearch\Helper\ResultFieldTemplate;
 use Plenty\Plugin\ConfigRepository;
 
+use Plenty\Modules\Webshop\Template\Providers\TemplateServiceProvider;
+use IO\Helper\ResourceContainer;
+
+
 
 /**
  * Class CustomThemeServiceProvider
@@ -22,14 +26,33 @@ class CustomThemeServiceProvider extends ServiceProvider
     {
 
     }
-
+  
+    
+    
     public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
     {
         $enabledOverrides = explode(", ", $config->get("CustomTheme.templates.override"));
+        $dispatcher->listen("IO.Resources.Import", function(ResourceContainer $container)
 
+{         
+     
+    $container->addScriptTemplate('CustomTheme::ItemList.Components.CategoryItem'); 
+
+    $container->addScriptTemplate('CustomTheme::PageDesign.Partials.Header.UserLoginHandler');    
+    $container->addScriptTemplate('CustomTheme::PageDesign.Partials.Header.WishListCount');  
+
+
+
+},0);  
+        
+
+        
         // Override partials
         $dispatcher->listen('IO.init.templates', function (Partial $partial) use ($enabledOverrides)
         {
+            
+             
+            
             $partial->set('head', 'Ceres::PageDesign.Partials.Head');
             $partial->set('header', 'Ceres::PageDesign.Partials.Header.Header');
             $partial->set('page-design', 'Ceres::PageDesign.PageDesign');
@@ -54,6 +77,8 @@ class CustomThemeServiceProvider extends ServiceProvider
             {
                 $partial->set('footer', 'CustomTheme::PageDesign.Partials.Footer');
             }
+            
+             
 
             return false;
         }, self::PRIORITY);
