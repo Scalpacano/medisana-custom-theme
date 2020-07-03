@@ -36,7 +36,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
 {         
      
-    $container->addScriptTemplate('CustomTheme::ItemList.Components.CategoryItem'); 
+
 
     $container->addScriptTemplate('CustomTheme::PageDesign.Partials.Header.UserLoginHandler');    
     $container->addScriptTemplate('CustomTheme::PageDesign.Partials.Header.WishListCount');  
