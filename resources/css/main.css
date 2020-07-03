@@ -25,16 +25,12 @@
 
 
 
-  @media (max-width: 992px) {
-    .desk-pagination {display:none}
-    }
-
-    @media (max-width: 992px) {
-        .mobile-pagination {float:right}
-        }
 
 
-    .page-content h1{color:#495057; text-transform:none; font-weight:300; margin-top: 80px !important}
+
+
+
+.page-content h1{color:#495057; text-transform:none; font-weight:300; margin-top: 80px !important}
 
 
 /* ICONS */
@@ -249,6 +245,18 @@
 .ftn-article-headline {margin-top:1em; font-family: 'Open Sans', sans-serif; color:#3e3e3e; font-size:1.6em; font-weight:500; line-height:1.5em}
 .ftn-article-1 {font-size:14px; color:#5f5f5f; font-weight:300; line-height:1.8em}
   /* --------------------------------------------*/
+
+
+@media (min-width: 992px) {
+.mobile-facette-btn {display:none}
+}
+
+
+  @media (max-width: 992px) {
+    .desk-pagination {display:none}
+    }
+
+
 
 @media (min-width: 992px) {
   .desk-pagination {float:right}
