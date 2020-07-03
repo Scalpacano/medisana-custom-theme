@@ -29,6 +29,11 @@
     .desk-pagination {display:none}
     }
 
+    @media (max-width: 992px) {
+        .mobile-pagination {float:right}
+        }
+
+
     .page-content h1{color:#495057; text-transform:none; font-weight:300; margin-top: 80px !important}
 
 
@@ -7538,7 +7543,8 @@ a.bg-success:hover, a.bg-success:focus, button.bg-success:hover, button.bg-succe
 }
 
 .bg-info {
-    background-color: #17a2b8 !important
+    background-color: #17a2b8 !important;
+    display:none;
 }
 
 a.bg-info:hover, a.bg-info:focus, button.bg-info:hover, button.bg-info:focus {
