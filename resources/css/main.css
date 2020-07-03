@@ -249,18 +249,20 @@
 
 @media (min-width: 992px) {
 .mobile-facette-btn {display:none}
+.slider-pad {margin-top:50px}
 }
 
 
-  @media (max-width: 992px) {
-    .desk-pagination {display:none}
-    }
+@media (max-width: 992px) {
+.desk-pagination {display:none}
+.slider-pad {margin-top:0px}
+}
 
 
 
 @media (min-width: 992px) {
-  .desk-pagination {float:right}
-  }
+.desk-pagination {float:right}
+}
   
   
   
