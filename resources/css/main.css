@@ -36,8 +36,9 @@
 .icon-pad {float:left; padding:0 10px 10px 0; }
 .icon-img {border-radius:6px; width:70px; background:#fff; border:1px solid #e5e5e5}
 
-.full-top-bar-icon {color:#222226; font-size:14px}
-.full-top-bar-txt { color:#222226; font-size:12px; font-family: 'Open Sans', sans-serif;}
+.full-top-bar-pad {padding-right:20px}
+.full-top-bar-icon {color:#dd362e; font-size:14px}
+.full-top-bar-txt { color:#222226; font-size:12px; font-family: 'Open Sans', sans-serif}
 .full-top-bar-txt a {color:#222226}
 .full-top-bar-txt a:hover {color:#dd362e !important}
 
