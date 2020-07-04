@@ -25,7 +25,22 @@
 
 
 
-
+@media (max-width: 991px) {
+    .teaser-full {display:none}
+    }
+  
+  @media (min-width: 992px) {
+      .teaser-full {display:block}
+      }
+  
+  
+  @media (max-width: 991px) {
+        .teaser-mobile {display:block}
+      }
+      
+  @media (min-width: 992px) {
+          .teaser-mobile {display:none}
+      }
 
 
 
@@ -599,6 +614,230 @@
 		width: 25%;
     }
 }
+
+
+
+
+.katbox img {
+    display:block;
+    max-width:100%;
+    max-height:260px
+  }
+  .katbox .img {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    width:50%;
+  padding:calc(2 * 7.5px);
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center
+  }
+  @media (min-width: 544px) {
+  .katbox .img {
+  padding:calc(2 * 10px)
+  }
+  }
+  @media (min-width: 768px) {
+  .katbox .img {
+  padding:calc(2 * 10px)
+  }
+  }
+  @media (min-width: 992px) {
+  .katbox .img {
+  padding:calc(2 * 12.5px)
+  }
+  }
+  @media (min-width: 1200px) {
+  .katbox .img {
+  padding:calc(2 * 12.5px)
+  }
+  }
+  @media (min-width: 1630px) {
+  .katbox .img {
+  padding:calc(2 * 20px)
+  }
+  }
+  .pkatbox .item {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    width:100%;
+    min-height:170px;
+    margin-bottom:calc(2 * 7.5px);
+    position:relative
+  }
+  @media (min-width: 544px) {
+  .katbox .item {
+  margin-bottom:calc(2 * 10px)
+  }
+  }
+  @media (min-width: 768px) {
+  .katbox .item {
+  margin-bottom:calc(2 * 10px)
+  }
+  }
+  @media (min-width: 992px) {
+  .katbox .item {
+  width:33.33%;
+  margin-bottom:calc(2 * 12.5px)
+  }
+  .katbox .item:nth-child(odd) .inner {
+  margin-right:12.5px
+  }
+  }
+  @media (min-width: 992px) and (min-width: 1200px) {
+  .katbox .item:nth-child(odd) .inner {
+  margin-right:12.5px
+  }
+  }
+  @media (min-width: 992px) and (min-width: 1630px) {
+  .katbox .item:nth-child(odd) .inner {
+  margin-right:20px
+  }
+  }
+  @media (min-width: 992px) {
+  .katbox .item:nth-child(even) .inner {
+  margin-left:12.5px
+  }
+  }
+  @media (min-width: 992px) and (min-width: 1200px) {
+  .katbox .item:nth-child(even) .inner {
+  margin-left:12.5px
+  }
+  }
+  @media (min-width: 992px) and (min-width: 1630px) {
+  .katbox .item:nth-child(even) .inner {
+  margin-left:20px
+  }
+  }
+  @media (min-width: 1200px) {
+  .katbox .item {
+  margin-bottom:calc(2 * 12.5px)
+  }
+  }
+  @media (min-width: 1630px) {
+  .katbox .item {
+  margin-bottom:calc(2 * 20px)
+  }
+  }
+  .katbox .inner {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    width:100%;
+    border-radius:0px;
+    background-color:#f8f8f8;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    justify-content:space-between
+  }
+  .katbox .el {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    width:50%;
+  padding:calc(2 * 7.5px)
+  }
+  @media (min-width: 544px) {
+  .katbox.el {
+  padding:calc(2 * 10px)
+  }
+  }
+  @media (min-width: 768px) {
+  .katbox .el {
+  padding:calc(2 * 10px)
+  }
+  }
+  @media (min-width: 992px) {
+  .katbox .el {
+  padding:calc(2 * 12.5px)
+  }
+  }
+  @media (min-width: 1200px) {
+  .katbox .el {
+  min-height:330px;
+  padding:calc(2 * 12.5px)
+  }
+  }
+  @media (min-width: 1630px) {
+  .katbox .el {
+  padding:calc(2 * 20px)
+  }
+  }
+  .katbox .title {
+    font-size:21px;
+    font-weight:600
+  }
+  @media (min-width: 1200px) {
+  .katbox .title {
+  font-size:36px;
+  line-height:36px;
+  margin-bottom:20px
+  }
+  }
+  .katbox .text {
+    font-size:12px;
+    margin-top:15px;
+    margin-bottom:20px
+  }
+  @media (min-width: 544px) {
+  .katbox .text {
+  font-size:14px
+  }
+  }
+  .katbox .button {
+    display:-webkit-inline-box;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    font-size:16px;
+    margin-top:auto;
+    padding:5px 15px;
+    white-space:nowrap;
+    text-transform:none;
+    color:#dd362e;
+    font-weight:400;
+    border-radius:8px;
+    background-color:#f4f4f4;
+    border:1px solid #dd362e;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -ms-flex-item-align:start;
+    align-self:flex-start
+  }
+  @media (min-width: 992px) {
+  .katbox .button {
+  font-size:18px;
+  padding:8px 6px 8px 20px
+  }
+  }
+  .katbox .button:hover {
+    background-color:#dd362e;
+    color:#fff;
+  }
+  .katbox .button::after {
+  width:9px;
+  height:7px;
+  margin-left:3px;
+  content:'';
+  
+  }
+  @media (min-width: 992px) {
+  .katbox .button::after {
+  width:14px;
+  height:10px;
+  margin-left:5px
+  }
+  }
+  
 
 
 :root {
