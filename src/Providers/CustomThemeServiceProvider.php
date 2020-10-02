@@ -1,5 +1,5 @@
 <?php
-namespace CustomTheme\Providers;
+namespace CustomThemes\Providers;
 
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Events\Dispatcher;
@@ -15,10 +15,10 @@ use IO\Helper\ResourceContainer;
 
 
 /**
- * Class CustomThemeServiceProvider
- * @package CustomTheme\Providers
+ * Class CustomThemesServiceProvider
+ * @package CustomThemes\Providers
  */
-class CustomThemeServiceProvider extends ServiceProvider
+class CustomThemesServiceProvider extends ServiceProvider
 {
     const PRIORITY = 0;
 
@@ -31,16 +31,23 @@ class CustomThemeServiceProvider extends ServiceProvider
     
     public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
     {
-        $enabledOverrides = explode(", ", $config->get("CustomTheme.templates.override"));
+        $enabledOverrides = explode(", ", $config->get("CustomThemes.templates.override"));
         $dispatcher->listen("IO.Resources.Import", function(ResourceContainer $container)
 
 {         
-     
+    
+    
+    $container->addScriptTemplate('CustomThemes::ItemList.Components.CategoryItem'); 
 
+    $container->addScriptTemplate('CustomThemes::Item.Components.SingleItem'); 
+    $container->addScriptTemplate('CustomThemes::Item.Components.AddToWishList'); 
+    $container->addScriptTemplate('CustomThemes::Item.Components.VariationSelect');
+    $container->addScriptTemplate('CustomThemes::Item.Components.ItemPrice');
 
-    $container->addScriptTemplate('CustomTheme::PageDesign.Partials.Header.UserLoginHandler');    
-    $container->addScriptTemplate('CustomTheme::PageDesign.Partials.Header.WishListCount');  
+    $container->addScriptTemplate('CustomThemes::PageDesign.Partials.Header.UserLoginHandler');    
+    $container->addScriptTemplate('CustomThemes::PageDesign.Partials.Header.WishListCount');  
 
+    $container->addScriptTemplate('CustomThemes::Newsletter.Components.NewsletterInput');  
 
 
 },0);  
@@ -60,22 +67,22 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             if (in_array("head", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('head', 'CustomTheme::PageDesign.Partials.Head');
+                $partial->set('head', 'CustomThemes::PageDesign.Partials.Head');
             }
 
             if (in_array("header", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('header', 'CustomTheme::PageDesign.Partials.Header.Header');
+                $partial->set('header', 'CustomThemes::PageDesign.Partials.Header.Header');
             }
 
             if (in_array("page_design", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('page-design', 'CustomTheme::PageDesign.PageDesign');
+                $partial->set('page-design', 'CustomThemes::PageDesign.PageDesign');
             }
 
             if (in_array("footer", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('footer', 'CustomTheme::PageDesign.Partials.Footer');
+                $partial->set('footer', 'CustomThemes::PageDesign.Partials.Footer');
             }
             
              
@@ -89,7 +96,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.home', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Homepage.Homepage');
+                $container->setTemplate('CustomThemes::Homepage.Homepage');
                 return false;
             }, self::PRIORITY);
         }
@@ -100,7 +107,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.category.content', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Category.Content.CategoryContent');
+                $container->setTemplate('CustomThemes::Category.Content.CategoryContent');
                 return false;
             }, self::PRIORITY);
         }
@@ -111,7 +118,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Category.Item.CategoryItem');
+                $container->setTemplate('CustomThemes::Category.Item.CategoryItem');
                 return false;
             }, self::PRIORITY);
         }
@@ -122,7 +129,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.basket', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Basket.Basket');
+                $container->setTemplate('CustomThemes::Basket.Basket');
                 return false;
             }, self::PRIORITY);
         }
@@ -133,7 +140,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.checkout', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Checkout.CheckoutView');
+                $container->setTemplate('CustomThemes::Checkout.CheckoutView');
                 return false;
             }, self::PRIORITY);
         }
@@ -144,7 +151,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.confirmation', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Checkout.OrderConfirmation');
+                $container->setTemplate('CustomThemes::Checkout.OrderConfirmation');
                 return false;
             }, self::PRIORITY);
         }
@@ -155,7 +162,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.login', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Customer.Login');
+                $container->setTemplate('CustomThemes::Customer.Login');
                 return false;
             }, self::PRIORITY);
         }
@@ -166,7 +173,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.register', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Customer.Register');
+                $container->setTemplate('CustomThemes::Customer.Register');
                 return false;
             }, self::PRIORITY);
         }
@@ -177,7 +184,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.item', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Item.SingleItemWrapper');
+                $container->setTemplate('CustomThemes::Item.SingleItemWrapper');
                 return false;
             }, self::PRIORITY);
         }
@@ -188,7 +195,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.search', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::ItemList.ItemListView');
+                $container->setTemplate('CustomThemes::ItemList.ItemListView');
                 return false;
             }, self::PRIORITY);
         }
@@ -199,7 +206,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.my-account', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::MyAccount.MyAccountView');
+                $container->setTemplate('CustomThemes::MyAccount.MyAccountView');
                 return false;
             }, self::PRIORITY);
         }
@@ -210,7 +217,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.wish-list', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::WishList.WishListView');
+                $container->setTemplate('CustomThemes::WishList.WishListView');
                 return false;
             }, self::PRIORITY);
         }
@@ -221,7 +228,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.contact', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Customer.Contact');
+                $container->setTemplate('CustomThemes::Customer.Contact');
                 return false;
             }, self::PRIORITY);
         }
@@ -232,7 +239,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.order.return', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::OrderReturn.OrderReturnView');
+                $container->setTemplate('CustomThemes::OrderReturn.OrderReturnView');
                 return false;
             }, self::PRIORITY);
         }
@@ -243,7 +250,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.order.return.confirmation', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::OrderReturn.OrderReturnConfirmation');
+                $container->setTemplate('CustomThemes::OrderReturn.OrderReturnConfirmation');
                 return false;
             }, self::PRIORITY);
         }
@@ -254,7 +261,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.cancellation-rights', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::StaticPages.CancellationRights');
+                $container->setTemplate('CustomThemes::StaticPages.CancellationRights');
                 return false;
             }, self::PRIORITY);
         }
@@ -265,7 +272,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.cancellation-form', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::StaticPages.CancellationForm');
+                $container->setTemplate('CustomThemes::StaticPages.CancellationForm');
                 return false;
             }, self::PRIORITY);
         }
@@ -276,7 +283,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.legal-disclosure', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::StaticPages.LegalDisclosure');
+                $container->setTemplate('CustomThemes::StaticPages.LegalDisclosure');
                 return false;
             }, self::PRIORITY);
         }
@@ -287,7 +294,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.privacy-policy', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::StaticPages.PrivacyPolicy');
+                $container->setTemplate('CustomThemes::StaticPages.PrivacyPolicy');
                 return false;
             }, self::PRIORITY);
         }
@@ -298,7 +305,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.terms-conditions', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::StaticPages.TermsAndConditions');
+                $container->setTemplate('CustomThemes::StaticPages.TermsAndConditions');
                 return false;
             }, self::PRIORITY);
         }
@@ -309,7 +316,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.item-not-found', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::StaticPages.ItemNotFound');
+                $container->setTemplate('CustomThemes::StaticPages.ItemNotFound');
                 return false;
             }, self::PRIORITY);
         }
@@ -320,7 +327,7 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.page-not-found', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::StaticPages.PageNotFound');
+                $container->setTemplate('CustomThemes::StaticPages.PageNotFound');
                 return false;
             }, self::PRIORITY);
         }
@@ -331,16 +338,16 @@ class CustomThemeServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.newsletter.opt-out', function (TemplateContainer $container)
             {
-                $container->setTemplate('CustomTheme::Newsletter.NewsletterOptOut');
+                $container->setTemplate('CustomThemes::Newsletter.NewsletterOptOut');
                 return false;
             }, self::PRIORITY);
         }
 
         $enabledResultFields = [];
 
-        if(!empty($config->get("CustomTheme.result_fields.override")))
+        if(!empty($config->get("CustomThemes.result_fields.override")))
         {
-            $enabledResultFields = explode(", ", $config->get("CustomTheme.result_fields.override"));
+            $enabledResultFields = explode(", ", $config->get("CustomThemes.result_fields.override"));
         }
 
         if(!empty($enabledResultFields))
@@ -352,31 +359,31 @@ class CustomThemeServiceProvider extends ServiceProvider
                 // Override list item result fields
                 if (in_array("list_item", $enabledResultFields) || in_array("all", $enabledResultFields))
                 {
-                    $templatesToOverride[ResultFieldTemplate::TEMPLATE_LIST_ITEM] = 'CustomTheme::ResultFields.ListItem';
+                    $templatesToOverride[ResultFieldTemplate::TEMPLATE_LIST_ITEM] = 'CustomThemes::ResultFields.ListItem';
                 }
                 
                 // Override single item view result fields
                 if (in_array("single_item", $enabledResultFields) || in_array("all", $enabledResultFields))
                 {
-                    $templatesToOverride[ResultFieldTemplate::TEMPLATE_SINGLE_ITEM] = 'CustomTheme::ResultFields.SingleItem';
+                    $templatesToOverride[ResultFieldTemplate::TEMPLATE_SINGLE_ITEM] = 'CustomThemes::ResultFields.SingleItem';
                 }
                 
                 // Override basket item result fields
                 if (in_array("basket_item", $enabledResultFields) || in_array("all", $enabledResultFields))
                 {
-                    $templatesToOverride[ResultFieldTemplate::TEMPLATE_BASKET_ITEM] = 'CustomTheme::ResultFields.BasketItem';
+                    $templatesToOverride[ResultFieldTemplate::TEMPLATE_BASKET_ITEM] = 'CustomThemes::ResultFields.BasketItem';
                 }
 
                 // Override auto complete list item result fields
                 if (in_array("auto_complete_list_item", $enabledResultFields) || in_array("all", $enabledResultFields))
                 {
-                    $templatesToOverride[ResultFieldTemplate::TEMPLATE_AUTOCOMPLETE_ITEM_LIST] = 'CustomTheme::ResultFields.AutoCompleteListItem';
+                    $templatesToOverride[ResultFieldTemplate::TEMPLATE_AUTOCOMPLETE_ITEM_LIST] = 'CustomThemes::ResultFields.AutoCompleteListItem';
                 }
                 
                 // Override category tree result fields
                 if (in_array("category_tree", $enabledResultFields) || in_array("all", $enabledResultFields))
                 {
-                    $templatesToOverride[ResultFieldTemplate::TEMPLATE_CATEGORY_TREE] = 'CustomTheme::ResultFields.CategoryTree';
+                    $templatesToOverride[ResultFieldTemplate::TEMPLATE_CATEGORY_TREE] = 'CustomThemes::ResultFields.CategoryTree';
                 }
 
                 $templateContainer->setTemplates($templatesToOverride);
