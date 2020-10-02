@@ -8,6 +8,8 @@
 {% set currencyFormatSelect = config("Ceres.currency.format_selection") %}
 
 {% set headerContainer = LayoutContainer.show("Ceres::Header") | trim %}
+{% if headerContainer is empty %}
+ 
 
 {% set companyLogo  = config("Ceres.header.company_logo") %}
 {% set showHeaderNavBar = config("Ceres.header.show_navbars") %}
@@ -16,15 +18,9 @@
 
 {% set homepageURL = services.url.getHomepageURL() %}
 
+<!-----------------------HEADER-------------------------------->
 
-
-<div id="socials">
-    <a id="kt_btn" class="social_btn" href="/contact"><img src="https://cdn03.plentymarkets.com/08spb2yuy9vg/frontend/e-home24/img/layout/_kontakt-logo.png" alt="Kontakt" class="kt_img"></a>
-</div>
-
-
-
-
+ 
 <header id="page-header" class="fixed-top default-header d-print-none">
     <div id="full-top-bar-2">
         <div class="full-top-bar">
@@ -36,10 +32,7 @@
 
     
                     <div class="col-lg-9" style="padding:5px 0 0 0; float:left">
-                        <i class="fas fa-shipping-fast full-top-bar-icon"></i> <span class="full-top-bar-txt full-top-bar-pad">Sie haben Fragen? (0)5634 35 83 225</span>
-                        <i class="fas fa-phone-square full-top-bar-icon"></i> <span class="full-top-bar-txt full-top-bar-pad">schneller Versand mit DHL</span>
-                        <i class="fas fa-comments full-top-bar-icon"></i> <span class="full-top-bar-txt full-top-bar-pad">kostenlose Beratung</span>
-                        <i class="fas fa-certificate full-top-bar-icon"></i> <span class="full-top-bar-txt full-top-bar-pad">Original Neuware</span>
+                        <span class="full-top-bar-txt">Sie haben Fragen? 0391 - 99 02 44 60</span>
                     </div>
 
 
@@ -62,7 +55,7 @@
                      </li>
 
 
- 
+
 
                     </ul>
                 </div>
@@ -73,12 +66,20 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
     <div class="container-max">
         <div class="row flex-row-reverse position-relative">
             <div id="page-header-parent" class="col-12 header-container" data-header-offset>
                 <div class="top-bar header-fw">
                     <div class="container-max px-0 pr-lg-3">
                         <div class="row mx-0 flex-row-reverse position-relative">
+        
                             <div class="top-bar-items mobile-top-bar" >
                                 <div class="controls">
                                     <ul id="controlsList" class="controls-list mb-0 d-flex list-inline pl-2 pl-sm-1 pl-md-0">
@@ -143,7 +144,7 @@
                                                             <a class="nav-link" href="{{ queryString({"currency": currency.name}) }}" rel="nofollow">
                                                                 {% if currencyFormatSelect == 'all' %}
                                                                     {{ currency.name }} <br class="d-block d-sm-none" />({{ currency.symbol }})
-                                                                {% else %} 
+                                                                {% else %}
                                                                     {{ currency[currencyFormatSelect] }}
                                                                 {% endif %}
                                                             </a>
@@ -197,351 +198,358 @@
                     </div>
                 </div>
 
+        
+<!-----------------------NAVIGATION-------------------------------->
 
 
+<nav class="navbar header-fw p-0 border-bottom megamenu" id="header-border" style="background:#fff">
+    <div class="container-max d-block">
+        <div class="row">
 
 
-
-
-
-
-                <nav class="navbar header-fw p-0 border-bottom normalmenu" id="header-border" style="background:#fff">
-                    <div class="container-max d-block">
-                        <div class="row">
-                
-                
-                            <div class="col-xs-12 col-lg-3" style="float:left">
-                                <div class="logo-mobile">
-                                    <div class="logo-top-pad" id="padding-col-1">
-                                        <a href="/">
-                                            <img src="https://cdn03.plentymarkets.com/08spb2yuy9vg/frontend/e-home24/img/layout/e-home33_logo.jpg" class="logo-top img-responsive" id="logo-size">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                
-                
-                            <div class="col-xs-12 col-lg-7 hb-1" style="float:left">
-                                <div class="row">
-                                    <div class="col-xs-2 col-lg-3 hb-1-2"
-                                        id="padding-col-2">
-                                        <div class="head-info">
-                                            <span><a href="http://www.idealo.de/preisvergleich/Shop/296577.html" target="_blank"><img src="https://cdn03.plentymarkets.com/08spb2yuy9vg/frontend/e-home24/img/layout/s1_rating_extern2.png" class="header-badge" border="0"></a></span>
-                                        </div>
-                
-                                    </div>
-                                    <div class="col-xs-12 col-lg-9 hb-1-2  search-pad"
-                                        id="padding-col-3">
-                
-                
-                
-                                        <item-search></item-search>
-                
-                
-                
-                
-                                    </div>
-                
-                                </div>
-                            </div>
-                
-                
-                            <div class="col-xs-12 col-lg-2 hb-1 cart-pad">
-                
-                                
-                                <div style="float:right; padding-left:10px" class="cart-full">
-                                    <div @mouseover.once="$store.dispatch('loadComponent', 'basket-preview')" class="cart-full" style="padding:0 10px 0 0">
-                                        <a v-toggle-basket-preview href="#" class="toggle-basket-preview nav-link">
-                                           
-                                                <span class="badge-top-2" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
-                                           
-                
-                                            <icon icon="shopping-bag" style="font-size:25px; color:#222226" class-loading="fa-refresh" :loading="$store.state.basket.isBasketLoading"></icon>
-                
-                                        </a>
-                
-                                        <lazy-load component="basket-preview">
-                                            <basket-preview :show-net-prices="false">
-                                                <template #before-basket-item>
-                                                                        
-                                                </template>
-                                                <template #after-basket-item>
-                                                                        
-                                                </template>
-                                                <template #before-basket-totals>
-                                                                        
-                                                </template>
-                                                <template #before-item-sum>
-                                                                        
-                                                </template>
-                                                <template #after-item-sum>
-                                                                        
-                                                </template>
-                                                <template #before-shipping-costs>
-                                                                        
-                                                </template>
-                                                <template #after-shipping-costs>
-                                                                        
-                                                </template>
-                                                <template #before-total-sum>
-                                                                        
-                                                </template>
-                                                <template #before-vat>
-                                                                        
-                                                </template>
-                                                <template #after-vat>
-                                                                        
-                                                </template>
-                                                <template #after-total-sum>
-                                                                        
-                                                </template>
-                                                <template #after-basket-totals>
-                                                                        
-                                                </template>
-                                                <template #before-checkout-button>
-                                                                        
-                                                </template>
-                                                <template #after-checkout-button>
-                                                                        
-                                                </template>
-                                            </basket-preview>
-                                        </lazy-load>
-                                    </div>
-                
-                                    </div>
-                
-                
-                                    <div style="float:right">
-                                        <wish-list-count>
-                                        </wish-list-count>
-                                    </div>
-                
-                                    </div>
-                
-                
-                            <div @mouseover.once="$store.dispatch('loadComponent', 'basket-preview')" class="cart-mobile" style="padding:0 12px 0 0">
-                                <a v-toggle-basket-preview href="#" class="toggle-basket-preview nav-link">
-                                   
-                                        <span class="badge-top-mobile-2" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
-                                   
-                
-                                    <icon icon="shopping-bag" style="font-size:20px; color:#222226" class-loading="fa-refresh" :loading="$store.state.basket.isBasketLoading"></icon>
-                
-                                </a>
-                
-                                <lazy-load component="basket-preview">
-                                    <basket-preview :show-net-prices="false">
-                                        <template #before-basket-item>
-                                                                
-                                        </template>
-                                        <template #after-basket-item>
-                                                                
-                                        </template>
-                                        <template #before-basket-totals>
-                                                                
-                                        </template>
-                                        <template #before-item-sum>
-                                                                
-                                        </template>
-                                        <template #after-item-sum>
-                                                                
-                                        </template>
-                                        <template #before-shipping-costs>
-                                                                
-                                        </template>
-                                        <template #after-shipping-costs>
-                                                                
-                                        </template>
-                                        <template #before-total-sum>
-                                                                
-                                        </template>
-                                        <template #before-vat>
-                                                                
-                                        </template>
-                                        <template #after-vat>
-                                                                
-                                        </template>
-                                        <template #after-total-sum>
-                                                                
-                                        </template>
-                                        <template #after-basket-totals>
-                                                                
-                                        </template>
-                                        <template #before-checkout-button>
-                                                                
-                                        </template>
-                                        <template #after-checkout-button>
-                                                                
-                                        </template>
-                                    </basket-preview>
-                                </lazy-load>
-                            </div>
-                
-                             <button v-open-mobile-navigation class="navbar-toggler-2 d-lg-none p-3" type="button">
-                                &#9776;
-                            </button>
-                
-                
-                        </div>
+            <div class="col-xs-12 col-lg-3" style="float:left">
+                <div class="logo-mobile">
+                    <div class="logo-top-pad" id="padding-col-1">
+                        <a href="/">
+                            <img src="https://www.mojawo.de/layout/mojawo/logo.png" class="logo-top img-responsive" id="logo-size">
+                        </a>
                     </div>
-                
-                
-                
-                    <div class="container-max">
-                
-                
-                        <div class="main-navbar-collapsable d-none d-lg-block">
-                                                                   
-                            {% if showHeaderNavBar == "top" or showHeaderNavBar == "both" or not services.template.isCategory() %}
-                   
-                            <ul class="mainmenu p-0 m-0 d-flex nav-menu">
-                                {{ Tree.get_nav_bar(
-                                    categories,
-                                    "",
-                                    ceresConfig.header.megamenuLevels,
-                                    {
-                                        "1": ceresConfig.header.megamenuItemsStage1,
-                                        "2": ceresConfig.header.megamenuItemsStage2,
-                                        "3": ceresConfig.header.megamenuItemsStage3
-                                    }
-                                ) }}
-                            </ul>
-                
-                
-                
-                
-                            {% endif %}
-                        
-                         </div>
-                
-                
                 </div>
-                
-                    
-                </nav>
-
-
-
-
-
-
             </div>
+
+
+            <div class="col-xs-12 col-lg-7 hb-1" style="float:left">
+                <div class="row">
+                    <div class="col-xs-2 col-lg-3 hb-1-2"
+                        id="padding-col-2">
+                        <div class="head-info">
+                            <span><img src="https://cdn02.plentymarkets.com/drn3pw78qr6s/frontend/raumaussatter/theme/img/layout/kaeufersiegel.png" class="header-badge" border="0"></span>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-lg-9 hb-1-2"
+                        id="padding-col-3">
+
+
+
+                        <item-search></item-search>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-lg-2 hb-1">
+
+                
+                <div style="float:right; padding-left:10px" class="cart-full">
+                    <div @mouseover.once="$store.dispatch('loadComponent', 'basket-preview')" class="cart-full" style="padding:0 10px 0 0">
+                        <a v-toggle-basket-preview href="#" class="toggle-basket-preview nav-link">
+                           
+                                <span class="badge-top-2" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
+                           
+
+                                <i v-waiting-animation="$store.state.basket.isBasketLoading" waiting-class="fas fa-shopping-basket" class="fas fa-shopping-basket" aria-hidden="true" style="font-size:32px; color:#222226"></i>
+
+                        </a>
+
+                        <lazy-load component="basket-preview">
+                            <basket-preview :show-net-prices="false">
+                                <template #before-basket-item>
+                                                        
+                                </template>
+                                <template #after-basket-item>
+                                                        
+                                </template>
+                                <template #before-basket-totals>
+                                                        
+                                </template>
+                                <template #before-item-sum>
+                                                        
+                                </template>
+                                <template #after-item-sum>
+                                                        
+                                </template>
+                                <template #before-shipping-costs>
+                                                        
+                                </template>
+                                <template #after-shipping-costs>
+                                                        
+                                </template>
+                                <template #before-total-sum>
+                                                        
+                                </template>
+                                <template #before-vat>
+                                                        
+                                </template>
+                                <template #after-vat>
+                                                        
+                                </template>
+                                <template #after-total-sum>
+                                                        
+                                </template>
+                                <template #after-basket-totals>
+                                                        
+                                </template>
+                                <template #before-checkout-button>
+                                                        
+                                </template>
+                                <template #after-checkout-button>
+                                                        
+                                </template>
+                            </basket-preview>
+                        </lazy-load>
+                    </div>
+
+                    </div>
+
+
+                    <div style="float:right">
+                        <wish-list-count>
+                        </wish-list-count>
+                    </div>
+
+                    </div>
+
+
+            <div @mouseover.once="$store.dispatch('loadComponent', 'basket-preview')" class="cart-mobile" style="padding:0 12px 0 0">
+                <a v-toggle-basket-preview href="#" class="toggle-basket-preview nav-link">
+                   
+                        <span class="badge-top-mobile-2" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
+                   
+
+                        <i v-waiting-animation="$store.state.basket.isBasketLoading" waiting-class="fas fa-shopping-basket" class="fas fa-shopping-basket" aria-hidden="true" style="font-size:30px; color:#222226"></i>
+
+                </a>
+
+                <lazy-load component="basket-preview">
+                    <basket-preview :show-net-prices="false">
+                        <template #before-basket-item>
+                                                
+                        </template>
+                        <template #after-basket-item>
+                                                
+                        </template>
+                        <template #before-basket-totals>
+                                                
+                        </template>
+                        <template #before-item-sum>
+                                                
+                        </template>
+                        <template #after-item-sum>
+                                                
+                        </template>
+                        <template #before-shipping-costs>
+                                                
+                        </template>
+                        <template #after-shipping-costs>
+                                                
+                        </template>
+                        <template #before-total-sum>
+                                                
+                        </template>
+                        <template #before-vat>
+                                                
+                        </template>
+                        <template #after-vat>
+                                                
+                        </template>
+                        <template #after-total-sum>
+                                                
+                        </template>
+                        <template #after-basket-totals>
+                                                
+                        </template>
+                        <template #before-checkout-button>
+                                                
+                        </template>
+                        <template #after-checkout-button>
+                                                
+                        </template>
+                    </basket-preview>
+                </lazy-load>
+            </div>
+
+             <button v-open-mobile-navigation class="navbar-toggler-2 d-lg-none p-3" type="button">
+                &#9776;
+            </button>
+
+
         </div>
     </div>
 
 
-  
 
+    <div class="container-max">
+
+
+        <div class="main-navbar-collapsable d-none d-lg-block" style="border-top:1px solid #000">
+                                                   
+            {% if showHeaderNavBar == "top" or showHeaderNavBar == "both" or not services.template.isCategory() %}
+   
+            <ul class="mainmenu p-0 m-0 d-flex nav-menu" style="border-bottom:1px solid #dee2e6">
+                {{ Tree.get_nav_bar(
+                    categories,
+                    "",
+                    ceresConfig.header.megamenuLevels,
+                    {
+                        "1": ceresConfig.header.megamenuItemsStage1,
+                        "2": ceresConfig.header.megamenuItemsStage2,
+                        "3": ceresConfig.header.megamenuItemsStage3
+                    }
+                ) }}
+            </ul>
+
+
+
+
+            {% endif %}
+        
+         </div>
+
+
+</div>
+
+    
+</nav>
+
+<!-----------------------NAVIGATION-------------------------------->
+
+
+</div>
+</div>
+</div>
 </header>
 
 
+<!-----------------------HEADER-------------------------------->
 
-{% if not services.template.isHome() and not services.template.isMyAccount() and not services.template.isCheckout() %}
+
+
+
+
+                {% if not services.template.isHome() and not services.template.isMyAccount() and not services.template.isCheckout() %}
                  
-<!-----------------------BREADCRUMB-------------------------------->
-{% if categoryBreadcrumbs is not empty %}
-<div class="breadcrumbs header-fw breadcrump-margin">
-    <nav class="small d-none d-md-block px-0" data-component="breadcrumbs" data-renderer="twig">
-        {% set crumbs = [] %}
-        <ul class="breadcrumb container-max px-3 py-2 my-0 mx-auto">
-            <li class="breadcrumb-item">
-                <a href="{{ homepageURL }}">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    {% set crumb =
-                        [
-                            {
-                                "@type": "ListItem",
-                                "position": 1,
-                                "item":
-                                {
-                                    "@id": homepageURL,
-                                    "name": "Home"
-                                }
-                            }
-                        ] %}
-                    {% set crumbs = crumbs | merge(crumb) %}
-                </a>
-            </li>
-
-            {% set break = false %}
-            {% set catLevel = 2 %}
-            {% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}
-                {% if category.details[0] %}
-                    <li class="breadcrumb-item">
-                        <a href="{{ services.category.getURLById( category.id ) }}">{{ category.details[0].name }}</a>
-                        {% set crumb =
-                        [
-                            {
-                                "@type": "ListItem",
-                                "position": catLevel,
-                                "item":
-                                {
-                                    "@id": services.category.getURLById( category.id ),
-                                    "name": category.details[0].name
-                                }
-                            }
-                        ] %}
-                        {% set crumbs = crumbs | merge(crumb) %}
-                        {% set catLevel = catLevel + 1 %}
-                    </li>
-                {% else %}
-                    {% set break = true %}
+                <!-----------------------BREADCRUMB-------------------------------->
+                {% if categoryBreadcrumbs is not empty %}
+                <div class="breadcrumbs header-fw breadcrump-margin">
+                    <nav class="small d-none d-md-block px-0" data-component="breadcrumbs" data-renderer="twig">
+                        {% set crumbs = [] %}
+                        <ul class="breadcrumb container-max px-3 py-2 my-0 mx-auto">
+                            <li class="breadcrumb-item">
+                                <a href="{{ homepageURL }}">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    {% set crumb =
+                                        [
+                                            {
+                                                "@type": "ListItem",
+                                                "position": 1,
+                                                "item":
+                                                {
+                                                    "@id": homepageURL,
+                                                    "name": "Home"
+                                                }
+                                            }
+                                        ] %}
+                                    {% set crumbs = crumbs | merge(crumb) %}
+                                </a>
+                            </li>
+                
+                            {% set break = false %}
+                            {% set catLevel = 2 %}
+                            {% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}
+                                {% if category.details[0] %}
+                                    <li class="breadcrumb-item">
+                                        <a href="{{ services.category.getURLById( category.id ) }}">{{ category.details[0].name }}</a>
+                                        {% set crumb =
+                                        [
+                                            {
+                                                "@type": "ListItem",
+                                                "position": catLevel,
+                                                "item":
+                                                {
+                                                    "@id": services.category.getURLById( category.id ),
+                                                    "name": category.details[0].name
+                                                }
+                                            }
+                                        ] %}
+                                        {% set crumbs = crumbs | merge(crumb) %}
+                                        {% set catLevel = catLevel + 1 %}
+                                    </li>
+                                {% else %}
+                                    {% set break = true %}
+                                {% endif %}
+                            {% endfor %}
+                
+                            {% set lastCategory = categoryBreadcrumbs | last %}
+                            {% if lastCategory.details is defined %}
+                                <li class="breadcrumb-item active">
+                                    {% set crumb =
+                                    [
+                                        {
+                                            "@type": "ListItem",
+                                            "position": catLevel,
+                                            "item":
+                                            {
+                                                "@id": services.category.getURLById(lastCategory.id),
+                                                "name": lastCategory.details[0].name
+                                            }
+                                        }
+                                    ] %}
+                                    {% set crumbs = crumbs | merge(crumb) %}
+                                    <span>{{ lastCategory.details[0].name }}</span>
+                                </li>
+                            {% elseif item.documents[0].data is defined %}
+                                <li class="breadcrumb-item active">
+                                    {% set crumb =
+                                    [
+                                        {
+                                            "@type": "ListItem",
+                                            "position": catLevel,
+                                            "item":
+                                            {
+                                                "@id": requestedVariationUrl,
+                                                "name": item.documents[0].data | itemName
+                                            }
+                                        }
+                                    ] %}
+                                    {% set crumbs = crumbs | merge(crumb) %}
+                                    <span>{{ item.documents[0].data | itemName }}</span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                         <script type="application/ld+json">
+                        {
+                            "@context":"http://schema.org/",
+                            "@type":"BreadcrumbList",
+                            "itemListElement": {{ crumbs | json_encode | raw }}
+                        }
+                        </script>
+                    </nav>
+                </div>
                 {% endif %}
-            {% endfor %}
+                
+                <!-----------------------BREADCRUMB-------------------------------->
 
-            {% set lastCategory = categoryBreadcrumbs | last %}
-            {% if lastCategory.details is defined %}
-                <li class="breadcrumb-item active">
-                    {% set crumb =
-                    [
-                        {
-                            "@type": "ListItem",
-                            "position": catLevel,
-                            "item":
-                            {
-                                "@id": services.category.getURLById(lastCategory.id),
-                                "name": lastCategory.details[0].name
-                            }
-                        }
-                    ] %}
-                    {% set crumbs = crumbs | merge(crumb) %}
-                    <span>{{ lastCategory.details[0].name }}</span>
-                </li>
-            {% elseif item.documents[0].data is defined %}
-                <li class="breadcrumb-item active">
-                    {% set crumb =
-                    [
-                        {
-                            "@type": "ListItem",
-                            "position": catLevel,
-                            "item":
-                            {
-                                "@id": requestedVariationUrl,
-                                "name": item.documents[0].data | itemName
-                            }
-                        }
-                    ] %}
-                    {% set crumbs = crumbs | merge(crumb) %}
-                    <span>{{ item.documents[0].data | itemName }}</span>
-                </li>
-            {% endif %}
-        </ul>
-         <script type="application/ld+json">
-        {
-            "@context":"http://schema.org/",
-            "@type":"BreadcrumbList",
-            "itemListElement": {{ crumbs | json_encode | raw }}
-        }
-        </script>
-    </nav>
-</div>
+                {% endif %}
+
+
+
+{% else %}
+<header id="page-header" class="fixed-top">
+    <div class="container-max">
+        <div class="row flex-row-reverse position-relative">
+            <div id="page-header-parent" class="col-12 header-container" data-header-offset>
+                {{ headerContainer | raw }}
+            </div>
+        </div>
+    </div>
+</header>
 {% endif %}
-
-<!-----------------------BREADCRUMB-------------------------------->
-
-{% endif %}
-
-
 
 {% set scriptId = uid() %}
 <script id="{{ scriptId }}">
@@ -583,9 +591,11 @@
                 function scrollFunction() {
                     if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 50) {
                         document.getElementById("full-top-bar-2").style.display = "none";
+                        document.getElementById("logo-size").style.width = "180px";
 
                     } else {
                         document.getElementById("full-top-bar-2").style.display = "block";
+                        document.getElementById("logo-size").style.width = "230px";
 
 
                     }
