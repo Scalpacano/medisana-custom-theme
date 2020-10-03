@@ -1,43 +1,66 @@
-<script type="x/template" id="vue-newsletter-input">
-        <form :id="'newsletter-input-form_' + _uid" method="post" @submit.prevent="validateData">
-            <div class="row" >
+<script type="x/template" data-component="newsletter-input">
+    <form :id="'newsletter-input-form_' + _uid" method="post" @submit.prevent="validateData">
 
 
-
-                <div class="col-xs-9">
-                    <div class="input-group">
-                        <div class="input-unit" data-validate="mail">
-                            <label :for="'email-input-id_' + _uid">E-Mail *</label>
-                            <input type="email" autocomplete="email" :id="'email-input-id_' + _uid" v-model="email">
-                        </div>
-                    </div>
-                </div> 
-
-
-                <div class="col-xs-2" style="padding-left:0px">
-    <div class="input-group-btn">
-        <button type="button" class="nlbtn" @click="validateData" :disabled="isDisabled" :class="buttonSizeClass">
-                        
-                                Abonnieren
-                            </button>
-        </div>
-</div>  
-
-
-                <div class="col-xs-9" v-if="showPrivacyPolicyCheckbox">
-                    <div class="form-check small" data-validate>
-                        <input type="checkbox" class="form-check-input" :id="'privacy-policy-accept-id_' + _uid" name="privacy-policy-accept" v-model="privacyPolicyValue">
-                        <label :for="'privacy-policy-accept-id_' + _uid" class="form-check-label nlftn2">
-                                                                                            Hiermit bestätige ich, dass ich die                                     <a href="/cont/datenschutz/" target="_blank" style="color:#222226">
-                                        <span>Daten&shy;schutz&shy;erklärung</span>
-                                    </a>
-                                 gelesen habe. 
-                                                    </label>
-                    </div>
-                </div>
-
-
+<div>
+            <div class="col-xs-12">
+                <div class="nlftn1">Trends, Angebote und Gutscheine per E-Mail</div>
 
             </div>
-        </form>
+        </div>
+ 
+
+<div class="row">
+    <div class="col-xs-6" v-if="showNameInputs">
+                <div class="input-unit">
+                    <label :for="'first-name-input_' + _uid">Vorname</label>
+                    <input type="text" :id="'first-name-input_' + _uid" v-model="firstName">
+                </div>
+            </div>
+            <div class="col-xs-6 pl-0" v-if="showNameInputs">
+                <div class="input-unit">
+                    <label :for="'last-name-input_' + _uid">Nachname</label>
+                    <input type="text" :id="'last-name-input_' + _uid" v-model="lastName">
+                </div>
+            </div>
+
+    <div class="col-8" style="padding-right:0px">
+        <div class="input-group">
+            <div class="input-unit" data-validate="mail">
+                <label :for="'email-input-id_' + _uid">${ $translate("Ceres::Template.newsletterEmail") } *</label>
+                <input type="email" autocomplete="email" :id="'email-input-id_' + _uid" v-model="email">
+            </div>
+            <input autocomplete="none" class="honey" type="text" name="username" tabindex="-1" v-model="honeypot">
+        </div>
+    </div>
+
+
+
+    <div class="col-xs-4">
+        <div class="input-group-btn">
+            <button type="button" style="height:42px; background:#ffa143; border:1px solid #ffa143; border-radius:0" class="btn btn-block btn-primary btn-appearance" @click="validateData" :disabled="isDisabled" :class="buttonSizeClass">
+               
+             Abonieren
+            </button>
+        </div>
+    </div>
+
+
+    <div class="col-12" v-if="showPrivacyPolicyCheckbox" >
+        <div class="form-check small" data-validate>
+            <input type="checkbox" class="form-check-input" :id="'privacy-policy-accept-id_' + _uid" name="privacy-policy-accept" v-model="privacyPolicyValue">
+            <div class="form-check-label">
+            Hiermit bestätige ich, dass ich die
+            <a href="{{ urls.privacyPolicy }}" target="_blank">
+                <span style="color:#222226">Datenschutzerklärung</span>
+            </a>
+            gelesen habe.
+        </div>
+        </div>
+    </div>
+
+
+
+</div>
+</form>
 </script>
