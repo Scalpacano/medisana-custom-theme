@@ -352,6 +352,8 @@
 
 .ftn-article-headline {margin-top:1em; font-family: 'Roboto Slab', serif; color:#3e3e3e; font-size:1.6em; font-weight:500; line-height:1.5em}
 .ftn-article-1 {font-size:14px; color:#5f5f5f; font-weight:300; line-height:1.8em}
+
+.content-title {font-size: 2.142em;  font-family: 'Roboto Slab', serif  !important; margin-top: 1.5rem}
   /* --------------------------------------------*/
 
 @media (min-width: 992px) {
