@@ -38,8 +38,8 @@
     </div> 
     <div class="ftn-article-1">
         <b>Verfügbarkeit:</b>
-    <span v-if="currentVariation.variation.availability" class="ftn-article-1">
-    <span>
+        <span v-if="currentVariation.variation.availability" class="ftn-article-1">
+    <span class="ftn-article-1" style="color:#85af00">
      <item-availability></item-availability>
     </span>
 </span>
@@ -79,7 +79,7 @@
 
                         <span class="vat small text-muted">
                             <template v-if="showNetPrices">${ $translate("Ceres::Template.singleItemExclVAT") }</template><template v-else>${ $translate("Ceres::Template.singleItemInclVAT") }</template> ${ $translate("Ceres::Template.singleItemExclusive") }
-                        <a href="https://www.raumausstatter.de/cont/versandkosten/" style="color:#2b2b2b":title="$translate('Ceres::Template.singleItemShippingCosts')">${ $translate("Ceres::Template.singleItemShippingCosts") }</a>
+                        <a href="https://www.mojawo.de/seiten/versandkosten/" style="color:#2b2b2b":title="$translate('Ceres::Template.singleItemShippingCosts')">${ $translate("Ceres::Template.singleItemShippingCosts") }</a>
                         <a v-else :title="$translate('Ceres::Template.singleItemShippingCosts')">${ $translate("Ceres::Template.singleItemShippingCosts") }</a>
 
                         </span>
