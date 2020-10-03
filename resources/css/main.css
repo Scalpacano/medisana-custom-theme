@@ -319,23 +319,18 @@
 
 
     @media (max-width: 991px) {     
-      .mobile-top-bar {display:block}     
+      .mobile-top-bar {display:block} 
+      .full-top-bar {display:none}
+      .mobile-menu-border {border-bottom:1px solid #e5e5e5}    
     }
 
-    @media (min-width: 992px) {
-      .mobile-top-bar  {display:none}
-      }
-
-
-      @media (max-width: 991px) {  
-        .full-top-bar {display:none}
-      }
 
     
-    @media (min-width: 992px) {  
+    @media (min-width: 992px) { 
+      .mobile-top-bar  {display:none} 
       .full-top-bar {padding:0 0 3px 0; display:block}
+      .mobile-menu-border {border:0}
     }
-
 
 
 
@@ -482,7 +477,7 @@ div.katbox-image img:hover {
 
 .color_lbrown {color:#93bd00}
 .color_white_hover:hover {color:#fff}
-.bg_lbrown_translucent{background:rgba(255, 161, 67, .9)}
+.bg_lbrown_translucent{background:rgba(133, 175, 0, .9)}
 .d_inline_b{display: inline-block}
 
 .tr_all{
@@ -715,7 +710,7 @@ ul.footerList {padding-left: 0; list-style: none; line-height:36px}
   .t_align_c{text-align: center}
 
   .section_offset{padding:10px 0 30px}
-  .section_offset-2{padding:30px 0 25px}
+  .section_offset-2{padding:30px 0 0}
  
   .d_block {display:block}
 
@@ -5286,7 +5281,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
     align-items: center;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .navbar-brand {
@@ -5313,7 +5308,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
-    list-style: none
+    list-style: none;
 }
 
 .navbar-nav .nav-link {
@@ -5340,7 +5335,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
     flex-grow: 1;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center
+    align-items: center;
 }
 
 .navbar-toggler {
@@ -5395,7 +5390,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
         flex-flow: row nowrap;
         -webkit-box-pack: start;
         -ms-flex-pack: start;
-        justify-content: flex-start
+        justify-content: flex-start;
     }
     .navbar-expand-sm .navbar-nav {
         -webkit-box-orient: horizontal;
