@@ -86,6 +86,9 @@
 
                 <div class="col-3 d-none d-lg-block">
 
+                    <p class="ftn-facette-headline">Filter</p>
+                    <hr class="hr-line m_bottom_25">
+                    <item-filter-list></item-filter-list>
                     <item-filter-tag-list></item-filter-tag-list>
 
                         <div class="sidebar-categories">
@@ -93,12 +96,53 @@
                             <hr class="hr-line m_bottom_15">
                             {{ include('Ceres::PageDesign.Partials.Header.SideNavigation.twig') }}
                         </div>
- 
 
-                        <div style="padding:40px 0 0 0">
-                            <img src="https://cdn03.plentymarkets.com/08spb2yuy9vg/frontend/e-home24/img/layout/banner-vorteile.png" class="img-responsive img-border">
+
+
+
+                        <div style="padding:60px 0 0 0"><img src="https://cdn02.plentymarkets.com/i6rqagz2764j/frontend/mojawo/img/layout/sidebar-infobox-1-.png" class="img-responsive img-border"></div>
+
+                        <div class="katbox-container scale_image_container mt-5">
+                            <a href="/garten" class="katbox">
+
+                                <div class="katbox-image">
+                                    <img src="https://www.mojawo.de/layout/mojawo/sidebar-banner-1.jpg"
+                                        style="width:100%;">
+                                </div>
+                                <figcaption class="caption_type_1 tr_all">
+                                    <div
+                                        class="d_inline_b fw_light caption_title tt_uppercase bg_lbrown_translucent color_white">
+                                       Garten
+                                    </div>
+
+                                    <div class="caption_inner">
+                                        <h3 class="fw_light m_bottom_10 color_white">Dekoration und Möbel</h3>
+
+                                    </div>
+                                </figcaption>
+                            </a>
                         </div>
 
+                        <div class="katbox-container scale_image_container mt-5">
+                            <a href="/garten/auflagenboxen" class="katbox">
+
+                                <div class="katbox-image">
+                                    <img src="https://www.mojawo.de/layout/mojawo/sidebar-banner-2_.jpg"
+                                        style="width:100%;">
+                                </div>
+                                <figcaption class="caption_type_1 tr_all">
+                                    <div
+                                        class="d_inline_b fw_light caption_title tt_uppercase bg_lbrown_translucent color_white">
+                                       Garten
+                                    </div>
+
+                                    <div class="caption_inner">
+                                        <h3 class="fw_light m_bottom_10 color_white">Auflagenboxen</h3>
+
+                                    </div>
+                                </figcaption>
+                            </a>
+                        </div>
 
 
                         {{ LayoutContainer.show("Ceres::CategoryItem.SideNavBarBottom") }}
