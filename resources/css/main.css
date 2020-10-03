@@ -16553,7 +16553,7 @@ body.menu-is-visible {
     min-width: 100%;
     min-height: 7em;
     max-height: 86vh;
-    padding: 1em 5em;
+    padding: 1em 1em;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-column-count: 5;
@@ -16579,7 +16579,7 @@ body.menu-is-visible {
 
 .megamenu .collapse-inner li {
     padding: .1px 1.5em;
-    line-height: 200%;
+    line-height: 300%;
     text-align: left
 }
 
