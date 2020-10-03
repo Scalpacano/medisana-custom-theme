@@ -1,1 +1,43 @@
-<!-- Insert markup here -->
+<script type="x/template" id="vue-newsletter-input">
+        <form :id="'newsletter-input-form_' + _uid" method="post" @submit.prevent="validateData">
+            <div class="row" >
+
+
+
+                <div class="col-xs-9">
+                    <div class="input-group">
+                        <div class="input-unit" data-validate="mail">
+                            <label :for="'email-input-id_' + _uid">E-Mail *</label>
+                            <input type="email" autocomplete="email" :id="'email-input-id_' + _uid" v-model="email">
+                        </div>
+                    </div>
+                </div> 
+
+
+                <div class="col-xs-2" style="padding-left:0px">
+    <div class="input-group-btn">
+        <button type="button" class="nlbtn" @click="validateData" :disabled="isDisabled" :class="buttonSizeClass">
+                        
+                                Abonnieren
+                            </button>
+        </div>
+</div>  
+
+
+                <div class="col-xs-9" v-if="showPrivacyPolicyCheckbox">
+                    <div class="form-check small" data-validate>
+                        <input type="checkbox" class="form-check-input" :id="'privacy-policy-accept-id_' + _uid" name="privacy-policy-accept" v-model="privacyPolicyValue">
+                        <label :for="'privacy-policy-accept-id_' + _uid" class="form-check-label nlftn2">
+                                                                                            Hiermit bestätige ich, dass ich die                                     <a href="/cont/datenschutz/" target="_blank" style="color:#222226">
+                                        <span>Daten&shy;schutz&shy;erklärung</span>
+                                    </a>
+                                 gelesen habe. 
+                                                    </label>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </form>
+</script>
