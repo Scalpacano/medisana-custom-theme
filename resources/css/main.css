@@ -16602,7 +16602,7 @@ body.menu-is-visible {
 }
 
 .megamenu .level1 a {
-    font-weight: 700;
+    font-weight: 400;
     color: #93bd00 !important
 }
 
@@ -16649,7 +16649,7 @@ body.menu-is-visible {
     color: #212529;
     font-family: 'Roboto Slab', serif;
     text-transform:uppercase;
-    font-weight:500;
+    font-weight:400;
     padding:0.6rem 0;
 }
 
@@ -16708,8 +16708,8 @@ display:none !important;
     z-index: 99999;
     overflow-y: auto;
     font-size: 1.2em;
-    color: #fff;
-    background: #93bd00;
+    color: #222226;
+    background: #fff;
     opacity: .6;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -16744,8 +16744,9 @@ display:none !important;
 }
 
 .mobile-navigation .breadcrumb {
+    color:#fff;
     font-size: .8em;
-    background: #212529
+    background: #93bd00
 }
 
 .mobile-navigation .breadcrumb li {
@@ -16818,7 +16819,7 @@ display:none !important;
     color: inherit;
     font-family: 'Roboto Slab', serif;
     font-weight:500;
-    text-transform:uppercase;
+    text-transform:none;
 }
 
 .mobile-navigation .mainmenu li a:hover {
