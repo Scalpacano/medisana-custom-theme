@@ -170,7 +170,9 @@
 
 
 
-.page-content h1{color:#495057; text-transform:none; margin-top: 80px !important}
+.page-content h1{color:#495057;}
+
+.page-content .h2{margin-top:0em !important}
 
 
 .login-view-title {margin-top:2em;}
@@ -187,7 +189,7 @@
 
 
 @media (min-width: 1200px) {
-    .breadcrump-margin {margin-top:50px}
+    .breadcrump-margin {margin-top:20px}
 }
 
 
