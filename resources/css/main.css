@@ -1048,7 +1048,7 @@ a {
 }
 
 a:hover {
-    color: #f59434;
+    color: #3b3b3b;
     -webkit-text-decoration: underline;
     text-decoration: underline
 }
@@ -3181,7 +3181,7 @@ textarea.form-control {
     padding-left: 1.25rem
 }
 
-.form-check-label {color:#00567b !important; font-size:11px}
+.form-check-label {color:#212529 !important; font-size:11px}
 
 .form-check-input {
     position: absolute;
@@ -4113,7 +4113,7 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-link:hover {
-    color: #f59434;
+    color: #3b3b3b;
     -webkit-text-decoration: underline;
     text-decoration: underline
 }
@@ -6005,7 +6005,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 
 .page-link:hover {
     z-index: 2;
-    color: #f59434;
+    color: #3b3b3b;
     text-decoration: none;
     background-color: #e9ecef;
     border-color: #dee2e6
@@ -10918,7 +10918,7 @@ a.bg-dark:hover, a.bg-dark:focus, button.bg-dark:hover, button.bg-dark:focus {
 }
 
 a.text-primary:hover, a.color-primary:hover, a.text-primary:focus, a.color-primary:focus {
-    color: #f59434 !important
+    color: #3b3b3b !important
 }
 
 .text-secondary, .color-secondary {
@@ -14602,7 +14602,7 @@ html.ios .parallax-img-container .parallax-img-container-inner[style^="backgroun
 }
 
 .list-controls .selected-filters .selected-filter.reset-all:hover {
-    background-color: #f59434
+    background-color: #3b3b3b
 }
 
 .list-controls .filter-toggle {
@@ -17843,7 +17843,7 @@ header .widget {
 }
 
 .widget-primary a.text-appearance:hover, .widget-primary a.text-appearance:focus {
-    color: #f59434 !important
+    color: #3b3b3b !important
 }
 
 .widget-primary .bg-appearance {
@@ -17956,7 +17956,7 @@ header .widget {
 }
 
 .widget-primary .pagination .page-item .page-link:hover, .widget-primary .pagination .page-item .page-link:focus {
-    color: #f59434
+    color: #3b3b3b
 }
 
 .widget-primary .pagination .page-item.active .page-link {
