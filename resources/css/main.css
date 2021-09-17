@@ -182,12 +182,12 @@
 
 
 @media (min-width: 990px) {
-    .breadcrump-margin {margin-top:60px; margin-left:10px}
+    .breadcrump-margin {margin-top:20px; margin-left:10px}
 }
 
 
 @media (min-width: 1200px) {
-    .breadcrump-margin {margin-top:60px}
+    .breadcrump-margin {margin-top:50px}
 }
 
 
@@ -587,7 +587,17 @@ div.katbox-image img:hover {
 
 /* --------------------------------------------*/
 
-
+header.clone {
+    position:fixed;
+    top:-65px;
+    left: 0;
+    right: 0;
+    z-index:999;
+    transition:0.4s top cubic-bezier(.3,.73,.3,.74);
+}
+body.down header.clone {
+    top:0;
+}
 
 
 .section-header {
