@@ -68,15 +68,7 @@
     </div>
 
 
-
-
-
-
-
-    <div class="container-max">
-        <div class="row flex-row-reverse position-relative">
-            <div id="page-header-parent" class="col-12 header-container" data-header-offset>
-                <div class="top-bar header-fw">
+ <div class="top-bar header-fw">
                     <div class="container-max px-0 pr-lg-3">
                         <div class="row mx-0 flex-row-reverse position-relative">
         
@@ -196,20 +188,28 @@
                             </div>
                         </div>
                     </div>
-                </div>
+</div>
+
+
+
+
+    <div class="container-max" id="navbar_top" style="z-index:100">
+        <div class="row flex-row-reverse position-relative">
+            <div class="col-12 header-container">
+               
 
         
 <!-----------------------NAVIGATION-------------------------------->
 
 
-<nav class="navbar header-fw p-0 megamenu mobile-menu-border" id="header-border" style="background:#fff">
+<nav class="navbar header-fw p-0 megamenu mobile-menu-border" style="background:#fff">
     <div class="container-max d-block">
         <div class="row">
 
 
             <div class="col-xs-12 col-lg-3" style="float:left">
                 <div class="logo-mobile">
-                    <div class="logo-top-pad" id="padding-col-1">
+                    <div class="logo-top-pad">
                         <a href="/">
                             <img src="https://www.mojawo.de/layout/mojawo/logo.png" class="logo-top img-responsive" id="logo-size">
                         </a>
@@ -220,15 +220,13 @@
 
             <div class="col-xs-12 col-lg-7 hb-1" style="float:left">
                 <div class="row">
-                    <div class="col-xs-2 col-lg-3 hb-1-2"
-                        id="padding-col-2">
+                    <div class="col-xs-2 col-lg-3 hb-1-2">
                         <div class="head-info">
                             <span><img src="https://cdn02.plentymarkets.com/drn3pw78qr6s/frontend/raumaussatter/theme/img/layout/kaeufersiegel.png" class="header-badge" border="0"></span>
                         </div>
 
                     </div>
-                    <div class="col-xs-12 col-lg-9 hb-1-2"
-                        id="padding-col-3">
+                    <div class="col-xs-12 col-lg-9 hb-1-2">
 
 
 
@@ -551,19 +549,7 @@
 </header>
 {% endif %}
 
-{% set scriptId = uid() %}
-<script id="{{ scriptId }}">
-    var vueApp = document.getElementById("vue-app");
-    var pageHeader = document.getElementById("page-header");
 
-    if ( !!vueApp && !!pageHeader )
-    {
-        vueApp.style.marginTop = pageHeader.getBoundingClientRect().height + 'px';
-    }
-
-    var scriptElement = document.getElementById("{{ scriptId }}");
-    scriptElement.parentElement.removeChild(scriptElement);
-</script>
 
 <div>
     {% if category.linklist == "Y" %}
@@ -583,6 +569,23 @@
 </div>
 
 
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+  window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        document.getElementById('navbar_top').classList.add('fixed-top');
+        // add padding top to show content behind navbar
+        navbar_height = document.querySelector('.navbar').offsetHeight;
+        document.body.style.paddingTop = navbar_height + 'px';
+      } else {
+        document.getElementById('navbar_top').classList.remove('fixed-top');
+         // remove padding top from body
+        document.body.style.paddingTop = '0';
+      } 
+  });
+}); 
+</script>
 
 
             <script>
