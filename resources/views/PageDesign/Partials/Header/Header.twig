@@ -16,7 +16,7 @@
 {% set companyName  = trans("Ceres::Template.headerCompanyName") %}
 {% set useMegaMenu  = config("Ceres.header.megamenu_levels") > 1 %}
 
-{% set homepageURL = services.url.getHomepageURL() %}
+{% set homepageURL = services.url.getHomepageURL() %} 
 
 <!-----------------------HEADER-------------------------------->
 
@@ -189,7 +189,7 @@
                         </div>
                     </div>
 </div>
-
+ 
 
 
 
@@ -202,7 +202,7 @@
 <!-----------------------NAVIGATION-------------------------------->
 
 
-<nav class="navbar header-fw p-0 normalmenu mobile-menu-border" style="background:#fff">
+<nav class="navbar header-fw p-0 megamenu mobile-menu-border" style="background:#fff">
     <div class="container-max d-block">
         <div class="row">
 
@@ -251,7 +251,7 @@
                                 <span class="badge-top-2" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
                            
 
-                                <i v-waiting-animation="$store.state.basket.isBasketLoading" waiting-class="fas fa-shopping-basket" class="fas fa-shopping-basket" aria-hidden="true" style="font-size:32px; color:#222226"></i>
+                                <i v-waiting-animation="$store.state.basket.isBasketLoading" waiting-class="las la-shopping-basket" class="las la-shopping-basket" aria-hidden="true" style="font-size:32px; color:#222226"></i>
 
                         </a>
 
@@ -320,7 +320,7 @@
                         <span class="badge-top-mobile-2" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
                    
 
-                        <i v-waiting-animation="$store.state.basket.isBasketLoading" waiting-class="fas fa-shopping-basket" class="fas fa-shopping-basket" aria-hidden="true" style="font-size:30px; color:#222226"></i>
+                        <i v-waiting-animation="$store.state.basket.isBasketLoading" waiting-class="las la-shopping-basket" class="las la-shopping-basket" aria-hidden="true" style="font-size:30px; color:#222226"></i>
 
                 </a>
 
