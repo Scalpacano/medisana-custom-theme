@@ -1,7 +1,5 @@
 <?php
-
 namespace CustomTheme\Containers;
-
 use Plenty\Plugin\Templates\Twig;
 
 class CustomThemeContainer
