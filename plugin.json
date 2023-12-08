@@ -7,10 +7,10 @@
     "phone"             :   "",
     "description"       :   "CustomTheme",
     "namespace"         :   "CustomTheme",
-    "author"            :   "Plentybay",
+    "author"            :   "WebnStudio",
     "type"              :   "theme",
     "require"           :   {
-                                "Ceres":">= 3.0.0"
+                                "plentyShop":">= 5.0.0"
                             },
     "serviceProvider"   :   "CustomTheme\\Providers\\CustomThemeServiceProvider",
     "dataProviders"     :
