@@ -31,7 +31,6 @@
                 {% if category.details[0].imagePath is not empty %}image-url="/documents/{{ category.details[0].imagePath }}"{% endif %}
                 :is-background-image="true">
                 <div class="container-max">
-                    <div>
                         <div class="parallax-text-container">
                             <h1 class="h2 category-title kat-titel">{{ category.details[0].name | raw }}</h1>
                             {% if categoryDescriptionTop == "description1" or categoryDescriptionTop == "both" %}
@@ -41,7 +40,6 @@
                                 <div class="category-description mb-3">{{ category.details[0].description2 | raw }}</div>
                             {% endif %}
                         </div>
-                    </div>
                 </div>
             </lazy-img>
         </div>
