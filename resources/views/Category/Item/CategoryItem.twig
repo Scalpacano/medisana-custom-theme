@@ -63,7 +63,7 @@
                         </h1>
                     </div>
                 </div>
-            {% endif %} 
+            {% endif %}
 
             {% if category is defined and not ceresConfig.item.showCategoryImage %}
                 <div class="row mt-3">
@@ -86,103 +86,12 @@
 
                 <div class="col-3 d-none d-lg-block">
 
-
                         <div class="sidebar-categories">
-                            <div class="category-title">Kategorien</div>
-                            <hr class="hr-line m_bottom_15">
                             {{ include('Ceres::PageDesign.Partials.Header.SideNavigation.twig') }}
                         </div>
 
-
-
-
-                        <div style="padding:60px 0 0 0"><img src="https://cdn02.plentymarkets.com/i6rqagz2764j/frontend/mojawo/img/layout/sidebar-infobox-1-.png" class="img-responsive img-border"></div>
-
-
-                        <div class="katbox-container scale_image_container mt-5">
-                            <a href="/weihnachten/weihnachtsdekoration" class="katbox">
-
-
-                                <!--
-                                <div class="katbox-image">
-                                    <img src="https://www.mojawo.de/layout/mojawo/banner-weihnachten.jpg"
-                                        style="width:100%;">
-                                </div>
-                                -->
-                              
-                                <figcaption class="caption_type_1 tr_all">
-                                    <div
-                                        class="d_inline_b fw_light caption_title tt_uppercase bg_lbrown_translucent color_white">
-                                       Weihnachten
-                                    </div>
-
-                                    <div class="caption_inner">
-                                        <h3 class="fw_light m_bottom_10 color_white">Dekoration</h3>
-
-                                    </div>
-                                </figcaption>
-                            
-                            </a>
-                        </div>
-
-
-
-
-
-                        
-                        <div class="katbox-container scale_image_container mt-5">
-                            <a href="/heimtextilien/wohn-kuscheldecken" class="katbox">
-
-                                <div class="katbox-image">
-                                    <img src="https://www.mojawo.de/layout/mojawo/banner-3.jpg"
-                                        style="width:100%;">
-                                </div>
-                                <figcaption class="caption_type_1 tr_all">
-                                    <div
-                                        class="d_inline_b fw_light caption_title tt_uppercase bg_lbrown_translucent color_white">
-                                      Textilien
-                                    </div>
-
-                                    <div class="caption_inner">
-                                        <h3 class="fw_light m_bottom_10 color_white">Kuschelig & weich</h3>
-
-                                    </div>
-                                </figcaption>
-                            </a>
-                        </div>
-
-
-
-                        <div class="katbox-container scale_image_container mt-5">
-                            <a href="/moebel-wohnen/kamine-kaminzubehoer" class="katbox">
-
-                                <div class="katbox-image">
-                                    <img src="https://www.mojawo.de/layout/mojawo/banner-kamin.jpg"
-                                        style="width:100%;">
-                                </div>
-                                <figcaption class="caption_type_1 tr_all">
-                                    <div
-                                        class="d_inline_b fw_light caption_title tt_uppercase bg_lbrown_translucent color_white">
-                                       Möbel & Wohnen
-                                    </div>
-
-                                    <div class="caption_inner">
-                                        <h3 class="fw_light m_bottom_10 color_white">Kamine & Zubehör</h3>
-
-                                    </div>
-                                </figcaption>
-                            </a>
-                        </div>
-
-
-
-
-
                         {{ LayoutContainer.show("Ceres::CategoryItem.SideNavBarBottom") }}
-
-
-
-                    </div>
+                </div>
 
            
  
@@ -199,7 +108,7 @@
                     
                                         {% if overrideSearchFilters | trim is empty %}
                          
-                                            <div class="mobile-facette-btn">
+                                            <div style="display:none">
                                             <item-filter-list :facet-data="{{ facets | json_encode }}">
                                                 {% if facets | length > 0 %}
                                                     <a class="btn btn-link filter-toggle">
@@ -210,13 +119,11 @@
                                             <item-filter-tag-list></item-filter-tag-list>
                                         </div>
                                          
-
-
-                                        <div class="desk-pagination mobile-pagination">
-                                            <div style="padding:10px 10px 0 10px">
-                                            {% include "Ceres::Category.Item.Partials.Pagination" %}
+                                            <div class="desk-pagination mobile-pagination">
+                                                <div style="padding:10px 10px 0 10px">
+                                                {% include "Ceres::Category.Item.Partials.Pagination" %}
+                                            </div>
                                         </div>
-                                    </div>
                     
                                         {% else %}
                                             {{ overrideSearchFilters }}
