@@ -20,7 +20,7 @@ use IO\Helper\ResourceContainer;
  */
 class CustomThemeServiceProvider extends ServiceProvider
 {
-    const PRIORITY = 0;
+    const PRIORITY = 6;
 
     public function register()
     {
