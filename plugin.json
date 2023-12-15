@@ -10,7 +10,7 @@
     "author"            :   "WebnStudio",
     "type"              :   "theme",
     "require"           :   {
-                                "plentyShop":">= 5.0.0"
+                                "Ceres":">= 5.0.0"
                             },
     "serviceProvider"   :   "CustomTheme\\Providers\\CustomThemeServiceProvider",
     "dataProviders"     :
